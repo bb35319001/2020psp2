@@ -3,8 +3,12 @@
 #include <string.h>
 #include <math.h>
 
-extern double ave_online(double val,double ave)
-extern double var_online()
+extern double ave_online(double val,double ave);
+extern double var_online(double val, double ave, double square_ave);
+double count = 0;
+double ave = 0;
+double var = 0;
+double square_ave = 0;
 
 int main(void)
 {
@@ -26,22 +30,39 @@ int main(void)
 
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
-
-
+        count = count + 1;
+        ave = ave_online(val,ave);
+        square_ave = ave_online(val*val,square_ave);
+        var = var_online(val,ave,square_ave);
     
-
-
-
     }
+
+    printf("average=%lf\n",ave);
+    printf("variance=%lf\n",var);
 
     if(fclose(fp) == EOF){
         fputs("file close error\n",stderr);
         exit(EXIT_FAILURE);
     }
 
-
+    
     return 0;
 
 
+
 }
+
+double ave_online(double val,double ave){
+
+    return (((count-1)/count)*ave) + (val/count);
+
+}
+
+double var_online(double val, double ave, double square_ave){
+
+    return (square_ave)-(ave*ave);
+}
+
+
+
 
