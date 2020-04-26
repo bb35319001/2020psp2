@@ -30,15 +30,18 @@ int main(void)
 
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
+
         count = count + 1;
+        var = var_online(val,ave,square_ave);
         ave = ave_online(val,ave);
         square_ave = ave_online(val*val,square_ave);
-        var = var_online(val,ave,square_ave);
     
     }
 
     printf("average=%lf\n",ave);
     printf("variance=%lf\n",var);
+    printf("population_average=%lf\n",ave);
+    printf("population_variance=%lf\n",(((count - 1)/count))*var);
 
     if(fclose(fp) == EOF){
         fputs("file close error\n",stderr);
