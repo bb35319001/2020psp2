@@ -56,10 +56,10 @@ l.63~66:分散を求める計算を戻り値として返す
 ```
 input the filename of sample:../sample/heights_male.csv
 the filename of sample: ../sample/heights_male.csv
-sample mean：
-sample variance：
-population mean (estimated)：
-population variance (estimated)：
+sample mean：173.888750
+sample variance：25.361711
+population mean (estimated)：173.888750
+population variance (estimated)：28.984813
 ```
 
 ## 修正履歴

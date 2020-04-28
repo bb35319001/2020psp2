@@ -4,7 +4,7 @@
 #include <math.h>
 
 extern double ave_online(double val,double ave);
-extern double var_online(double val, double ave, double square_ave);
+extern double var_online(double ave, double square_ave);
 double count = 0;
 double ave = 0;
 double var = 0;
@@ -30,18 +30,17 @@ int main(void)
 
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
-
         count = count + 1;
-        var = var_online(val,ave,square_ave);
         ave = ave_online(val,ave);
         square_ave = ave_online(val*val,square_ave);
+        var = var_online(ave,square_ave);
     
     }
 
     printf("average=%lf\n",ave);
     printf("variance=%lf\n",var);
     printf("population_average=%lf\n",ave);
-    printf("population_variance=%lf\n",(((count - 1)/count))*var);
+    printf("population_variance=%lf\n",((count/(count-1))*var));
 
     if(fclose(fp) == EOF){
         fputs("file close error\n",stderr);
@@ -58,10 +57,10 @@ int main(void)
 double ave_online(double val,double ave){
 
     return (((count-1)/count)*ave) + (val/count);
-
 }
 
-double var_online(double val, double ave, double square_ave){
+
+double var_online(double ave, double square_ave){
 
     return (square_ave)-(ave*ave);
 }
