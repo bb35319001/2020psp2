@@ -49,6 +49,19 @@ l.63~66:分散を求める計算を戻り値として返す
 
 
 
+あいうえお
+
+## 入出力結果
+
+```
+input the filename of sample:../sample/heights_male.csv
+the filename of sample: ../sample/heights_male.csv
+sample mean：
+sample variance：
+population mean (estimated)：
+population variance (estimated)：
+```
+
 ## 修正履歴
 
 - l.36のvar_onlineは，更新した平均，2乗平均を使ってはまずいのではないでしょうか．
