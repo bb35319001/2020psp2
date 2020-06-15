@@ -12,6 +12,8 @@ int main(void)
     char buf[256];
     FILE* fp;
     double L1=1,L2=1;
+    double ma=170.8,mb=169.7;
+    double va=5.43*5.43,vb=5.5*5.5;
 
     printf("input the filename of sample:");
     fgets(fname,sizeof(fname),stdin);
@@ -27,10 +29,8 @@ int main(void)
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
 
-
-    
-
-
+        L1 = L1 * p_stdnorm((val-ma)/sqrt(va));
+        L2 = L2 * p_stdnorm((val-mb)/sqrt(vb));
 
     }
 
@@ -39,8 +39,8 @@ int main(void)
         exit(EXIT_FAILURE);
     }
 
-    printf("L_A: %f\n",max_val);
-    printf("L_B: %f\n",min_val);
+    printf("L_A: %f\n",L1);
+    printf("L_B: %f\n",L2);
 
     return 0;
 
