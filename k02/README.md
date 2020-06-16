@@ -20,13 +20,11 @@ bb35319001 青木晴喜
 と計算できる．<img src="/k02/tex/2ec6e630f199f589a2402fdf3e0289d5.svg?invert_in_darkmode&sanitize=true" align=middle width=8.270567249999992pt height=14.15524440000002pt/>は仮定した確率密度関数で，<img src="/k02/tex/27e556cf3caa0673ac49a8f0de3c73ca.svg?invert_in_darkmode&sanitize=true" align=middle width=8.17352744999999pt height=22.831056599999986pt/>はその母数．<img src="/k02/tex/2ec6e630f199f589a2402fdf3e0289d5.svg?invert_in_darkmode&sanitize=true" align=middle width=8.270567249999992pt height=14.15524440000002pt/>が正規分布なら，<img src="/k02/tex/27e556cf3caa0673ac49a8f0de3c73ca.svg?invert_in_darkmode&sanitize=true" align=middle width=8.17352744999999pt height=22.831056599999986pt/>は，平均<img src="/k02/tex/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width=9.90492359999999pt height=14.15524440000002pt/>と分散<img src="/k02/tex/e6718aa5499c31af3ff15c3c594a7854.svg?invert_in_darkmode&sanitize=true" align=middle width=16.535428799999988pt height=26.76175259999998pt/>である．
 
 ## ソースコードの説明
-l.15 それぞれの平均値を格納する変数を宣言、初期化
+l.5-8 それぞれの平均、標準偏差をマクロ定義
 
-l.16 それぞれの分散を格納する変数を宣言、初期化
+l.34,35 Aの尤度、Bの尤度それぞれをp_stdnorm関数を用いて計算
 
-l.32,33 Aの尤度、Bの尤度それぞれをp_stdnorm関数を用いて計算
-
-l.42,43 それぞれの尤度をprintfを用いて表示
+l.44,45 それぞれの尤度をprintfを用いて表示
 
 ## 入出力結果
 
