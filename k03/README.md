@@ -92,3 +92,5 @@ Num of dummy data: 5
 
 ## 修正履歴
 
+[comment #20200622 moto]
+- OKです。
