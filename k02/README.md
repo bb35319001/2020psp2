@@ -57,3 +57,6 @@ Likelihood for B：0.000002
 
   [comment #20200616_2moto]
 - OKです。バッチリです。
+
+[comment #20200623 kotaro]
+- 課題2完了．
