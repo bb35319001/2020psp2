@@ -94,3 +94,6 @@ Num of dummy data: 5
 
 [comment #20200622 moto]
 - OKです。
+
+[comment #20200623 kotaro]
+- 課題3完了．
